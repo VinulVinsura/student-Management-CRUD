@@ -5,4 +5,8 @@ import com.example.studentmanagmentsystem.dto.StudentDto;
 
 public interface StudentService {
     ResponseDto addStudent(StudentDto studentDto);
+
+    ResponseDto getAllStudent();
+
+    ResponseDto deleteById(Long id);
 }
