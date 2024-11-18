@@ -68,4 +68,10 @@ public class StudentServiceImpl implements StudentService {
 
         return new ResponseDto(00,"Success",department);
     }
+
+    @Override
+    public ResponseDto deleteStudentsByYearOfEnrollment(int yearOfEnroll) {
+        studentRepo.deleteByYearOfEnrollment(yearOfEnroll);
+        return new ResponseDto(00,"Delete Success.. ",null);
+    }
 }

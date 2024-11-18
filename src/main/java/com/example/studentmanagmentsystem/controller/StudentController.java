@@ -42,5 +42,10 @@ public class StudentController {
         return ResponseEntity.ok(studentService.getDepartmentByStudentId(studentId));
     }
 
+    @DeleteMapping("/delete-ByYearOfEnrollment/{year}")
+    public ResponseEntity<ResponseDto> deleteStudentsByYear(@PathVariable int year){
+        return ResponseEntity.ok(studentService.deleteStudentsByYearOfEnrollment(year));
+    }
+
 
 }

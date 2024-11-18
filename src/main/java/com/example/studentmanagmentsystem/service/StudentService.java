@@ -12,4 +12,6 @@ public interface StudentService {
 
     ResponseDto getAllStudentByYearOfEnrollment(int year);
     ResponseDto getDepartmentByStudentId(Long studentId);
+
+    ResponseDto deleteStudentsByYearOfEnrollment(int yearOfEnroll);
 }

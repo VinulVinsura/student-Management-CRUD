@@ -17,5 +17,7 @@ public interface StudentRepo extends JpaRepository<Student,Long> {
     @Query("select s.department from Student s where s.id=:studentId")
     Optional<String> findDepartmentById(Long studentId);
 
+    void deleteByYearOfEnrollment(int yearOfEnrollment);
+
 
 }
