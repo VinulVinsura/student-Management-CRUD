@@ -9,4 +9,7 @@ public interface StudentService {
     ResponseDto getAllStudent();
 
     ResponseDto deleteById(Long id);
+
+    ResponseDto getAllStudentByYearOfEnrollment(int year);
+    ResponseDto getDepartmentByStudentId(Long studentId);
 }

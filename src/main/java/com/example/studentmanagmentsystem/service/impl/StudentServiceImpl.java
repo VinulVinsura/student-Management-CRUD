@@ -10,6 +10,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -43,5 +44,28 @@ public class StudentServiceImpl implements StudentService {
             return new ResponseDto(00,"Success",null);
         }
         return new ResponseDto(01,"No Such Student Found",null);
+    }
+
+    @Override
+    public ResponseDto getAllStudentByYearOfEnrollment(int year) {
+
+        Optional<List<Student>> studentList = studentRepo.findAllByYearOfEnrollment(year);
+        if (studentList.isEmpty()){
+
+            return new ResponseDto(01,"No Such Student Found",null);
+
+        }
+        return new ResponseDto(00,"Success",studentList);
+
+    }
+
+    @Override
+    public ResponseDto getDepartmentByStudentId(Long studentId) {
+        Optional<String> department = studentRepo.findDepartmentById(studentId);
+        if (department.isEmpty()){
+            return new ResponseDto(01,"No Such Department Found",null);
+        }
+
+        return new ResponseDto(00,"Success",department);
     }
 }

@@ -19,6 +19,6 @@ public class Student {
     @Column(unique = true)
     private String email;
 
-    private String Department;
+    private String department;
     private int yearOfEnrollment;
 }
